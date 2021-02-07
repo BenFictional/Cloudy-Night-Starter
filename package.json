@@ -20,5 +20,8 @@
     "gulp-sass": "^4.1.0",
     "html-minifier": "^4.0.0",
     "sass": "^1.26.10"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-navigation": "^0.1.6"
   }
 }

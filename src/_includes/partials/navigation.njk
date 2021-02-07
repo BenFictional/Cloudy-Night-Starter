@@ -1,0 +1,17 @@
+<nav class="flex items-center justify-between flex-wrap px-5 py-3 border-b">
+  <a href="/" class="font-semibold text-xl tracking-tight">Home</a>
+
+  {% set navPages = collections.all | eleventyNavigation %}
+  <ul>
+    {% for entry in navPages %}
+      <li class="inline">
+        <a
+         href="{{ entry.url }}"
+         class="{{'current-page nav-item' if entry.url in page.url
+         else 'nav-item'}}">
+         {{ entry.title }}
+       </a>
+      </li>
+    {% endfor %}
+ </ul>
+</nav>
