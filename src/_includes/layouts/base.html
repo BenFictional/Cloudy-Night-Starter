@@ -11,6 +11,8 @@
 	  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"/>
    
     <style>{% include "css/critical.css" %}</style>
+    <link rel="stylesheet" href="/css/styles.css">
+    
     {# Add facility for pages to delare an array of critical styles #}
     {% if pageCriticalStyles %}
       {% for item in pageCriticalStyles %}
@@ -31,6 +33,9 @@
   </head>
   <body>
     {% include "partials/navigation.njk" %}
+    <main>
     {% block content %}{% endblock%}
+    </main>
+    {% include "partials/footer.njk" %}
   </body>
 </html>

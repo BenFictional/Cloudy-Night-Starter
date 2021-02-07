@@ -1,11 +1,10 @@
 ---
-layout: 'layouts/home.html'
+title: Blog
+layout: 'layouts/article.html'
 eleventyNavigation:
   key: Blog
   order: 3
 ---
-
-<h1>Blog</h1>
 
 {% set postslist = collections.posts %}
 {% include "partials/post-list.njk" %}

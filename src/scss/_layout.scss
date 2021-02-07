@@ -1,0 +1,51 @@
+body {
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+   
+}
+main {
+    width: 100%;
+    flex: 1 0 auto;
+    
+    // padding: $unit-med;
+}
+
+article {
+    max-width: 60ch;
+    padding: $unit-med;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+}
+
+.hero {
+    width: 100%;
+    margin: 0;
+    display: grid;
+    place-content: center;
+    min-height: 50vh;
+    background-color: $color-primary-light;
+}
+
+.post-archive li {
+    display: grid;
+    padding: $unit-med;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid $color-gray-light;
+    &:last-of-type { border-bottom: none;}
+    
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: $unit-lrg;
+    flex-shrink: 0;
+    background-color: $color-gray-light;
+}

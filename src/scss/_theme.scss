@@ -1,0 +1,51 @@
+// COLOR
+$color-primary: dodgerblue;
+$color-primary-light: lighten($color-primary, 33%);
+$color-primary-dark: darken($color-primary, 15%);
+$color-secondary: tomato;
+$color-white: #fefefe;
+$color-black: #222;
+$color-gray: #ddd;
+$color-gray-light: lighten($color-gray, 5%);
+
+
+// TYPOGRAPHY 
+
+$body-font: Lato, Helvetica, sans-serif;
+$header-font: Rubik, sans-serif;
+
+$ratio: 1.25;  // Major third
+$base-font-size: 20px;
+
+$h6-size: $base-font-size;
+$h5-size: $base-font-size * $ratio;
+$h4-size: $h5-size * $ratio;
+$h3-size: $h4-size * $ratio; 
+$h2-size: $h3-size * $ratio;
+$h1-size: $h2-size * $ratio;
+
+// LAYOUT
+
+$unit-sml: .5rem;
+$unit-med: 1rem;
+$unit-lrg: 3rem;
+
+$global-border: $unit-sml;
+
+// BUTTONS
+
+button {
+  background-color: $color-primary;
+  color: $color-white;
+  max-width: 20ch;
+  border-radius: $global-border;
+  border: none;
+  padding: $unit-sml;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}

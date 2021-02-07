@@ -1,0 +1,19 @@
+nav {
+    width: 100%;
+    display: flex;
+    padding: $unit-med;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.site-title{
+    // margin-right: auto;
+}
+.nav-menu {
+    display: flex;
+}
+
+.nav-menu > * {
+    margin: 0 $unit-med;
+}
