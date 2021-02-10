@@ -11,10 +11,8 @@ $color-gray-light: lighten($color-gray, 5%);
 
 
 // TYPOGRAPHY 
-
 $body-font: Lato, Helvetica, sans-serif;
 $header-font: Rubik, sans-serif;
-
 $ratio: 1.25;  // Major third
 $base-font-size: 20px;
 
@@ -26,15 +24,12 @@ $h2-size: $h3-size * $ratio;
 $h1-size: $h2-size * $ratio;
 
 // LAYOUT
-
 $unit-sml: .5rem;
 $unit-med: 1rem;
 $unit-lrg: 3rem;
-
 $global-border: $unit-sml;
 
 // BUTTONS
-
 button {
   background-color: $color-primary;
   color: $color-white;
