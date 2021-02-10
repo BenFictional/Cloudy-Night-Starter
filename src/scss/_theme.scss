@@ -1,8 +1,9 @@
 // COLOR
-$color-primary: dodgerblue;
-$color-primary-light: lighten($color-primary, 33%);
+$color-primary: #2b75bf;
+$color-primary-light: lighten($color-primary, 30%);
 $color-primary-dark: darken($color-primary, 15%);
-$color-secondary: tomato;
+$color-secondary: #e8cdab;
+$color-secondary-light: lighten($color-secondary, 15%);
 $color-white: #fefefe;
 $color-black: #222;
 $color-gray: #ddd;

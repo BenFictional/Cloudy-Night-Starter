@@ -8,10 +8,9 @@ body {
 main {
     width: 100%;
     flex: 1 0 auto;
-    
-    // padding: $unit-med;
 }
 
+// For pages with centered content
 article {
     max-width: 60ch;
     padding: $unit-med;
@@ -22,25 +21,28 @@ article {
     text-align: center;
 }
 
+// Homepage
 .hero {
     width: 100%;
     margin: 0;
     display: grid;
     place-content: center;
     min-height: 50vh;
-    background-color: $color-primary-light;
+    background-color: $color-secondary;
 }
 
+// Blog page
 .post-archive li {
-    display: grid;
     padding: $unit-med;
     display: flex;
-    justify-content: space-evenly;
     border-bottom: 1px solid $color-gray-light;
     &:last-of-type { border-bottom: none;}
-    
+    .post-title {flex: 1;}
+    .post-date {flex: 1;}
+    .post-description {flex: 2;}   
 }
 
+// Footer
 footer {
     width: 100%;
     display: flex;
