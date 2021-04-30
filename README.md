@@ -17,7 +17,7 @@ A minimal starter project with UI basics and file optimization. Forked from Coff
 
 To install the necessary packages, run this command in the root folder of the site:
 
-```sh
+```
 npm install
 ```
 
@@ -35,3 +35,7 @@ npm install
 {% set pageCriticalStyles = ['css/<example.css>'] %}
 ```
 
+## Social SEO
+
+Sitewide sharing meta tags are located in `_includes/partials/meta-info.html`
+For post-specific sharings tags, install the [Eleventy SEO plugin](https://github.com/artstorm/eleventy-plugin-seo). 
