@@ -1,10 +1,10 @@
 ---
 layout: layouts/post.html
-title: My first post
-description: The first post on the blog
+title: A great project
+description: Project, not a post.
 date: 2020-08-01
 ---
-Hello, here is the body of the post.
+I made this.
 
 ## Image using shortcode:
 

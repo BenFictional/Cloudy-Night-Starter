@@ -43,6 +43,18 @@ module.exports = (config) => {
     }).toFormat("dd-MM-yy");
   });
 
+  // Image shortcode
+  config.addShortcode('img', function (path, alt) {
+
+      if (process.env.NODE_ENV === 'production') {
+      return `<img src="https://res.cloudinary.com/benjand/image/fetch/q_auto,f_auto/https://elated-varahamihira-719e35.netlify.app/images/${path}" alt="${alt}">`
+      }
+
+      else {
+      return `<img src="/images/${path}" alt="${alt}">`
+      }
+  })
+
   return {
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
