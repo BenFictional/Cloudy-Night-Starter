@@ -43,6 +43,12 @@ module.exports = (config) => {
     }).toFormat("dd-MM-yy");
   });
 
+  config.addFilter("yearOnly", dateObj => {
+    return DateTime.fromJSDate(dateObj, {
+      zone: 'utc'
+    }).toFormat("yyyy");
+  });
+
   // Image shortcode
   config.addShortcode('img', function (path, alt) {
 

@@ -1,0 +1,50 @@
+<li class="project card">
+
+      {# HEADER #}
+      <ul class="project-meta">
+        {# ART OR DESIGN #}
+          <li>
+        {% for item in post.data.tags %}
+            {%- if item == 'art' -%}
+              {{ item | capitalize }}:       
+            {% endif %}
+            {%- if item == 'design' -%}
+              {{ item | capitalize }}:       
+            {% endif %}
+            {%- if item == 'life' -%}
+              {{ item | capitalize }}:       
+            {% endif %}
+        {% endfor %}
+        </li>
+
+        {# YEAR #}
+        <li> <time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | yearOnly }}</time></li>
+
+        {# LOCATION #}
+        <li>{{ post.data.location }}</li>
+      </ul>
+
+      {# IMAGE #}
+      {% if post.data.featured_image %}
+      <img class="featured-image" src="{{ post.data.featured_image}}" alt="{{ post.data.featured_alt }}">
+      {% endif %}
+
+      {# TITLE #}
+      <a class="post-title" href="{{ post.url | url }}">{{ post.data.title }}</a>
+
+      {# TAGS #}
+      {% set comma = joiner() %}
+      {% for item in post.data.tags %}
+          {%- if item !== 'projects' -%}
+          {%- if item !== 'art' -%}
+           {%- if item !== 'design' -%}
+            {{ comma() }} {{ item | capitalize }}
+          {%- endif -%}
+          {%- endif -%}
+          {%- endif -%}
+      {% endfor %}
+
+      {# DESCRIPTION #}
+      <span class="post-description">{{ post.data.description }}</span>
+
+    </li>

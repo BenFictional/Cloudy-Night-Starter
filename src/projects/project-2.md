@@ -1,14 +1,14 @@
 ---
 layout: layouts/post.html
-title: A great project
-description:  Chicharrones neutra listicle beard snackwave quinoa viral squid tacos single-origin coffee
+title: A spectacular project
+description: Fanny pack migas man bun direct trade tilde brunch echo park brooklyn street art truffaut disrupt YOLO thundercats subway tile.
 date: 2020-01-01
 location: Baltimore
 featured_image: /images/yak.jpg
 featured_alt: A photo of a yak.
 tags: 
     - projects
-    - art 
+    - design 
     - video 
     - web
 ---

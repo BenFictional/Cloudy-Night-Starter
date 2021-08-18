@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block content %}
+
+<article class="page">
+<h1 class="page-title"> {{ title }}</h1>
+{{ content | safe}}
+</article>
+
+
+
+<ul class="post-archive">
+  {% set postslist = collections.projects %}
+  {% for post in postslist %}
+    
+       {% include "partials/project-card.njk" %}
+
+  {% endfor %}
+</ul>
+
+{% endblock %}
+
