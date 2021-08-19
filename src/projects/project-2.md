@@ -9,6 +9,7 @@ featured_alt: A photo of a yak.
 tags: 
     - projects
     - design 
+media: 
     - video 
     - web
 ---

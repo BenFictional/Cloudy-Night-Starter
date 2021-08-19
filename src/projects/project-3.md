@@ -9,5 +9,4 @@ featured_alt:
 tags: 
     - projects
     - life
-    - unlinked
 ---

@@ -2,7 +2,7 @@
 
       {# HEADER #}
       <ul class="project-meta">
-        {# ART OR DESIGN #}
+        {# TAG #}
           <li>
         {% for item in post.data.tags %}
             {%- if item == 'art' -%}
@@ -30,7 +30,11 @@
       {% endif %}
 
       {# TITLE #}
-      <a class="post-title" href="{{ post.url | url }}">{{ post.data.title }}</a>
+      {% if post.data.tags.includes("life") %}
+            <h2>{{ post.data.title }}</h2>
+        {% else %}
+      <a class="post-title" href="{{ post.url | url }}"><h2>{{ post.data.title }}</h2></a>
+       {% endif %}
 
       {# TAGS #}
       {% set comma = joiner() %}
