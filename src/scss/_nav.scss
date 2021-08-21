@@ -1,19 +1,112 @@
 nav {
     width: 100%;
-    display: flex;
+    display: grid;
+    // grid-template-columns: auto auto 1fr;
+    grid-template-columns: 50% auto;
+    grid-template-rows: auto 1fr;
     padding: $unit-med;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
+
+    .nav-item {
+        margin: 0 $unit-med;
+    }
+    a { color: var(--element); }
+
+    a.nav-link { 
+        text-transform: uppercase;
+        font-size: $h5-size;
+    }
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: $unit-med 0 0;
+    max-height: 0;
+    opacity: 0;
+    transform-origin: top;
+    transition: opacity .25s ease, max-height .25s ease, transform .15s ease;
+
+    &.showMenu {
+        display: flex;
+        opacity: 1;
+        max-height: 1000px;   
+      } 
+      
+}
+
+
+// Desktop menu
+@include breakpoint(med) {
+
+    nav {
+        grid-template-columns: auto 1fr;
+    }
+    .nav-menu {
+        opacity: 1;
+        max-height: none;
+        flex-direction: row;
+        align-content: center;
+        padding: 0;
+    }
+
+    .nav-item {
+        height: 1rem; 
+
+        a.nav-link { 
+            font-size: $base-font-size;
+            line-height: 1rem;
+         }
+
+        &:first-of-type { margin-left: auto; }
+        &:last-of-type { 
+            margin: -$unit-sml $unit-med 0 auto;
+         }
+    }
+    
 }
 
 .site-title{
-    // margin-right: auto;
-}
-.nav-menu {
-    display: flex;
+    font-size: $h5-size;
+    // margin-right: $unit-lrg;
 }
 
-.nav-menu > * {
-    margin: 0 $unit-med;
+.nav-toggle {
+    width: 7ch;
+    padding: $unit-xsml;
+
+    @include breakpoint(med) {
+        display: none;
+    }
 }
+
+// THEME TOGGLE BUTTON
+:root[color-mode="light"] .light--hidden {
+    display: none;
+}
+
+:root[color-mode="dark"] .dark--hidden {
+    display: none;
+}
+
+.color-mode__btn {
+    font-size: $base-font-size / $ratio;
+}
+.dark--hidden {
+    background-color: var(--element);
+
+    img { transform:translateY(-1.5px); }
+}
+
+.light--hidden {
+    background-color: var(--element);
+    color: var(--surface);
+}
+
+
+// MOBILE TOGGLE
+
+.nav-toggle .close { display: none; }

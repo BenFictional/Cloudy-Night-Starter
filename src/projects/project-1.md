@@ -10,8 +10,8 @@ tags:
     - projects
     - art 
 media: 
-    - video
-    - web
+    - installation
+    - audio
 ---
 
 I made this.

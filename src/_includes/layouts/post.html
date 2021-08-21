@@ -3,7 +3,9 @@
 
 {% block content %}
 <article class="post">
-<h1 class="page-title"> {{ title }}</h1>
-{{ content | safe}}
+    {# IMAGE #}
+    <img class="featured-image" src="{{ featured_image}}" alt="{{ featured_alt }}">
+    <h1 class="page-title"> {{ title }}</h1>
+    {{ content | safe}}
 </article>
 {% endblock %}

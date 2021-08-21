@@ -1,9 +1,7 @@
 body {
-    background-color: $color-white;
     display: flex;
     flex-direction: column;
     height: 100%;
-   
 }
 main {
     width: 100%;
@@ -28,14 +26,14 @@ article {
     display: grid;
     place-content: center;
     min-height: 50vh;
-    background-color: $color-secondary;
+    background-color: $secondary;
 }
 
 // Blog page
 .post-archive li {
     padding: $unit-med;
     display: flex;
-    border-bottom: 1px solid $color-gray-light;
+    border-bottom: 1px solid $light-gray;
     &:last-of-type { border-bottom: none;}
     .post-title {flex: 1;}
     .post-date {flex: 1;}
@@ -49,5 +47,5 @@ footer {
     justify-content: center;
     padding: $unit-lrg;
     flex-shrink: 0;
-    background-color: $color-gray-light;
+    background-color: $light-gray;
 }

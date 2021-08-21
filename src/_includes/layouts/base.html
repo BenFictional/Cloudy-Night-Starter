@@ -1,7 +1,7 @@
 {% set assetHash = global.random() %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" color-mode="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,11 +31,13 @@
 
     <title>{{ site.title }}</title>
   </head>
-  <body>
+  <body class="light-theme">
     {% include "partials/navigation.njk" %}
     <main>
     {% block content %}{% endblock%}
     </main>
     {% include "partials/footer.njk" %}
+
+    <script typ="javascript" src="./js/theme-toggle-min.js"></script>
   </body>
 </html>

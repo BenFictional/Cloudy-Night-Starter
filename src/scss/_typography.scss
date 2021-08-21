@@ -1,11 +1,10 @@
 body {
     font-family: $body-font;
     font-size: $base-font-size;
-    color: $color-black;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: $color-primary;
+ font-family: $header-font;
 }
 
 
@@ -18,10 +17,10 @@ h6 { font-size: $h6-size; margin-bottom: $h6-size; }
 
 a {
     text-decoration: none;
-    color: $color-primary;
+    color: $primary;
     font-weight: bold;
     &:hover {
-        color: $color-primary-dark;
+        color: $primary-dark;
     }
 }
 

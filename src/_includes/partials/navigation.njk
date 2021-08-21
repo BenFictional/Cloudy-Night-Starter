@@ -1,18 +1,33 @@
 <nav class="flex items-center justify-between flex-wrap px-5 py-3 border-b">
   {% set navPages = collections.all | eleventyNavigation %}
+
+   {# Primary site logo #}
+  <a class="site-title" href="/"> {{ site.title }}</a>
+
+  <button class="nav-toggle">
+    <span class="open">Menu</span>
+    <span class="close">&#x2715</span>
+  </button>
+
   <ul class="nav-menu">
-  {# Primary site logo #}
-  <li><a  href="/" class="site-title">Home</a></li>
-  
     {% for entry in navPages %}
       <li class="nav-item">
         <a
          href="{{ entry.url }}"
-         class="{{'current-page nav-item' if entry.url in page.url
-         else 'nav-item'}}">
+         class="{{'current-page nav-link' if entry.url in page.url
+         else 'nav-link'}}">
          {{ entry.title }}
        </a>
       </li>
-    {% endfor %}
- </ul>
+    {% endfor %}   
+    <li class="nav-item">
+      {# Color mode button #}
+      <button class="icon-button color-mode__btn light--hidden" aria-label="Light mode"><img src="/assets/icon-sun.svg">Light Mode
+      </button>
+
+      <button class="icon-button color-mode__btn dark--hidden" aria-label="Dark mode"><img src="/assets/icon-moon.svg">Dark Mode
+      </button>
+    </li>
+ </ul>  
+
 </nav>

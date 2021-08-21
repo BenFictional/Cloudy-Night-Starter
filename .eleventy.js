@@ -10,10 +10,14 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = (config) => {
 
+  config.addPassthroughCopy('src/assets');
+
   config.addPlugin(eleventyNavigationPlugin);
 
   // Tell 11ty to use the .eleventyignore and ignore our .gitignore file
   config.setUseGitIgnore(false);
+
+  config.addPassthroughCopy("js/color-mode.js");
 
   // Only minify HTML if we are in production because it slows builds _right_ down
   if (isProduction) {
@@ -61,6 +65,9 @@ module.exports = (config) => {
       }
   })
 
+  // Get current year
+  config.addShortcode("year", () => `${new Date().getFullYear()}`);
+
   return {
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
@@ -69,5 +76,6 @@ module.exports = (config) => {
       input: 'src',
       output: 'dist',
     },
+    passthroughFileCopy: true
   };
 };

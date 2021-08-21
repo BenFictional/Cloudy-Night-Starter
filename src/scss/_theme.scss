@@ -1,20 +1,55 @@
 // COLOR
-$color-primary: #2b75bf;
-$color-primary-light: lighten($color-primary, 30%);
-$color-primary-dark: darken($color-primary, 15%);
-$color-secondary: #e8cdab;
-$color-secondary-light: lighten($color-secondary, 15%);
-$color-white: #fefefe;
-$color-black: #222;
-$color-gray: #ddd;
-$color-gray-light: lighten($color-gray, 5%);
+$paper: #FDF6EB;
+$light: #fefefe;
+$dark: #332A32;
+$gray: #BFBEBD;
+$light-gray: #E5E5E5;
+$primary: #B4422B;
+$primary-light: lighten($primary, 30%);
+$primary-dark: darken($primary, 15%);
+$secondary: #2B9DB4;
+$tertiary: #8F3C7E;
 
+/* Define dark and light palettes with CSS variables */
+
+/* Light Mode */
+:root[color-mode="light"] {
+  --surface: #{ $paper };
+  --surface-emphasis: #{ $light };
+  --element: #{ $dark };
+  --element-subtle: #{ $gray };
+  --primary: #{ $primary };
+  --primary-light: #{ $primary-light };
+  --primary-dark: #{ $primary-dark };
+  --secondary: #{ $secondary };
+  --tertiary: #{ $tertiary };
+}
+
+/* Dark Mode */
+:root[color-mode="dark"] {
+  --surface: #{ $dark };
+  --surface-emphasis: #{ $gray };
+  --element: #{ $paper };
+  --element-subtle: #{ $light-gray };
+  --primary: #{ $primary };
+  --primary-light: #{ $primary-light };
+  --primary-dark: #{ $primary-dark };
+  --secondary: #{ $secondary };
+  --tertiary: #{ $tertiary };
+}
+
+// BASE COLORS
+body {
+  background-color: var(--surface);
+  color: var(--element);
+}
 
 // TYPOGRAPHY 
-$body-font: Lato, Helvetica, sans-serif;
-$header-font: Rubik, sans-serif;
+$body-font: Overpass, Helvetica, sans-serif;
+$header-font: Rubik, Helvetica, sans-serif;
+$mono-font: Overpass Mono, Inconsolata, Consolas, monospace;
 $ratio: 1.25;  // Major third
-$base-font-size: 20px;
+$base-font-size: 18px;
 
 $h6-size: $base-font-size;
 $h5-size: $base-font-size * $ratio;
@@ -24,15 +59,29 @@ $h2-size: $h3-size * $ratio;
 $h1-size: $h2-size * $ratio;
 
 // LAYOUT
+$unit-xsml: 0.25rem;
 $unit-sml: .5rem;
 $unit-med: 1rem;
 $unit-lrg: 3rem;
 $global-border: $unit-sml;
 
+// BREAKPOINTS
+$breakpoint-med: 640px;
+$breakpoint-lrg: 1000px;
+
+@mixin breakpoint($point) {
+  @if $point == med {
+    @media(min-width: $breakpoint-med) { @content; }
+  } 
+  @if $point == lrg {
+    @media(min-width: $breakpoint-lrg) { @content; }
+  } 
+}
+
 // BUTTONS
 button {
-  background-color: $color-primary;
-  color: $color-white;
+  background-color: $primary;
+  color: $light;
   max-width: 20ch;
   border-radius: $global-border;
   border: none;
@@ -42,6 +91,18 @@ button {
   font-size: 18px;
   cursor: pointer;
   &:hover {
-    background-color: $color-primary-dark;
+    background-color: $primary-dark;
   }
+}
+
+.icon-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 1em;
+  
+  img { 
+    width: 1.5em;
+    margin-right: 0.25em;
+   }
 }

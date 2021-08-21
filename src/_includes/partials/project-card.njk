@@ -25,9 +25,8 @@
       </ul>
 
       {# IMAGE #}
-      {% if post.data.featured_image %}
       <img class="featured-image" src="{{ post.data.featured_image}}" alt="{{ post.data.featured_alt }}">
-      {% endif %}
+
 
       {# TITLE #}
       {% if post.data.tags.includes("life") %}
@@ -36,16 +35,10 @@
       <a class="post-title" href="{{ post.url | url }}"><h2>{{ post.data.title }}</h2></a>
        {% endif %}
 
-      {# TAGS #}
+      {# MEDIA #}
       {% set comma = joiner() %}
-      {% for item in post.data.tags %}
-          {%- if item !== 'projects' -%}
-          {%- if item !== 'art' -%}
-           {%- if item !== 'design' -%}
+      {% for item in post.data.media %}
             {{ comma() }} {{ item | capitalize }}
-          {%- endif -%}
-          {%- endif -%}
-          {%- endif -%}
       {% endfor %}
 
       {# DESCRIPTION #}
